@@ -1,0 +1,21 @@
+//Write a program that takes an integer as input and returns true if the input is a powe of two
+import java.util.Scanner;
+
+public class poweof2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int num = scanner.nextInt();
+
+        System.out.println( num + ":" + Power2(num));
+
+        scanner.close();
+    }
+
+    public static boolean Power2(int num) {
+        // Check if the number is positive and has only one set bit
+        return num > 0 && (num & (num - 1)) == 0;
+    }
+}
