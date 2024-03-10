@@ -1,0 +1,36 @@
+//write a program that counts the number of vowels in a sentence
+ import java.util.Scanner;
+
+public class vowel {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String Sentence = scanner.nextLine();
+
+        int vowelCount = count(Sentence);
+        System.out.println("Number of vowels: " + vowelCount);
+
+        scanner.close();
+    }
+
+    public static int count(String sentence) {
+        if (sentence == null || sentence.isEmpty()) {
+            return 0;
+        }
+
+        int count = 0;
+        String lowerCaseSentence = sentence.toLowerCase();
+
+        for (char currentChar : lowerCaseSentence.toCharArray()) {
+            if ("aeiou".indexOf(currentChar) != -1) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
+
+
